@@ -2,7 +2,7 @@ import { graphql, request } from './request'
 
 import { RepositoryFile, RepositoryIssue, RepositoryIssues } from '../types/interface'
 
-export const REPO_OWNER = 'zhangyu1818'
+export const REPO_OWNER = 'dev4funs'
 export const REPO_NAME = 'blog'
 
 // GraphQL API
@@ -140,4 +140,10 @@ export const renderMarkdown = (text: string) =>
 // mix
 
 export const renderProfileMarkdown = () =>
-  queryProfileREADME().then(({ repository: { object: { text } } }) => renderMarkdown(text))
+  queryProfileREADME().then(
+    ({
+      repository: {
+        object: { text },
+      },
+    }) => renderMarkdown(text)
+  )
